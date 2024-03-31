@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        button{
+            height:50px;
+            width:80px;
+            padding:15px;
+            margin:5px;
+            font-size: 17px;
+            border:solid orange;
+            background:orange;
+        }
+        button:hover{
+            background: purple;
+            color:white;
+            border: purple;
+        }
+        input{
+            height:40px;
+            width:40%;
+            border:2px solid darkblue;
+            font-size: 26px;
+        }
+        .calculate{
+            padding:0px 180px;
+            font-size: 30px;
+        }
+        @media only screen and (min-width:768px) and (max-width:992px){
+            button{
+                height:20px;
+                width:50px;
+                padding:6px;
+                margin:3px;
+                border:yellow;
+                font-size: 10px;
+                background: yellow;
+            }
+            .calculate{
+                padding:0px 10%;
+                font-size: 15px;
+            }
+            input{
+                height:20px;
+                width:30%;
+            }
+        }
+        @media only screen and (min-width:0px) and (max-width:567px){
+            button{
+                height:40px;
+                width:15%;
+                padding:6px;
+                margin:3px;
+                border:yellow;
+                font-size: 15px;
+                background: orange;
+                color: white;
+                border-radius: 5px;
+            }
+            .calculate{
+                padding:0px 30%;
+                font-size: 15px;
+                font-size: 30px;
+            }
+            input{
+                height:40px;
+                width:70%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <center><h1>Calculator</h1>
+    <form name="cal">
+        <label></label>
+<input type="text" name="n" id="data">
+<br><br>
+<tr>
+<td><button type="button" onclick="cal.n.value+='1'">1</button></td>
+<td><button type="button" onclick="cal.n.value+='2'">2</button></td>
+<td><button type="button" onclick="cal.n.value+='3'">3</button></td>
+<td><button type="button" onclick="cal.n.value+='4'">4</button></td>
+</tr>
+<br>
+<tr>
+<td><button type="button" onclick="cal.n.value+='5'">5</button></td>
+<td><button type="button" onclick="cal.n.value+='6'">6</button></td>
+<td><button type="button" onclick="cal.n.value+='7'">7</button></td>
+<td><button type="button" onclick="cal.n.value+='8'">8</button></td>
+</tr>
+<br>
+<tr>
+<td><button type="button" onclick="cal.n.value+='9'">9</button></td>
+<td><button type="button" onclick="cal.n.value+='0'">0</button></td>
+<td><button type="button" onclick="cal.n.value+='.'">.</button></td>
+<td><button type="button" onclick="cal.n.value+='+'">+</button></td>
+</tr>
+<br>
+<tr>
+<td><button type="button" onclick="cal.n.value+='-'">-</button></td>
+<td><button type="button" onclick="cal.n.value+='*'">*</button></td>
+<td><button type="button" onclick="cal.n.value+='/'">/</button></td>
+<td><button type="button" onclick="cal.n.value=''">C</button></td>
+</tr>
+<br>
+<tr>
+<td><button type="button" onclick="square()">x<sup>2</sup></button></td>
+<td><button type="button" onclick="cube()">x<sup>3</sup></button></td>
+<td><button type="button" onclick="cal.n.value+='%'">Mod</button></td>
+<td><button type="button" onclick="sqrt()"> √</button></td>
+</tr>
+<br>
+<tr>
+    <td colspan="4"><button type="button" onclick="cal.n.value=eval(cal.n.value)" class="calculate">=</button></td>
+</tr>
+    </form>
+    </center>
+    <script>
+        function square(){
+            let data = parseInt(document.getElementById("data").value);
+            let result=Math.pow(data,2)
+            document.getElementById("data").value=result;
+        }
+        function cube(){
+            let data = parseInt(document.getElementById("data").value);
+            let result =Math.pow(data,3)
+            document.getElementById("data").value=result;
+        }
+        function sqrt(){
+            let data = parseInt(document.getElementById("data").value);
+            let result= Math.sqrt(data);
+            document.getElementById("data").value=result;
+        }
+    </script>
+</body>
+</html>
